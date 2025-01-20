@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Операция "Стальной кулак"</title>
+    <style>
+        /* Общие стили */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: url('https://via.placeholder.com/1920x600/333/000000?text=Военный+Фон') no-repeat center center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        header p {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Секция о миссии */
+        .mission {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #222;
+        }
+
+        .mission h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .mission p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+        }
+
+        /* Секция команды */
+        .team {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .team h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .member {
+            background: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .member h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .member p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Секция "Ход операции" */
+        .operation {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #222;
+        }
+
+        .operation h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .operation-steps {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .step {
+            background: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .step h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .step p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Секция "Галерея" */
+        .gallery {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .gallery-images {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px; /* Отступы между фото */
+            margin-top: 20px;
+        }
+
+        .gallery-images img {
+            width: 45%; /* Увеличил размер фото */
+            max-width: 400px; /* Максимальная ширина */
+            height: auto;
+            border-radius: 10px;
+            border: 5px solid #ffcc00; /* Увеличил толщину рамки */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Секция "Награды" */
+        .awards {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #222;
+        }
+
+        .awards h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .awards-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .award {
+            background: #333;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .award h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #ffcc00;
+        }
+
+        .award p {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Секция "Контакты" */
+        .contact {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ffcc00;
+            background: #333;
+            color: #fff;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background: #e6b800;
+        }
+
+        /* Подвал сайта */
+        footer {
+            background: #111;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <h1>Операция "Стальной кулак"</h1>
+        <p>Миссия выполнена. Победа за нами.</p>
+    </header>
+
+    <!-- Секция о миссии -->
+    <section class="mission">
+        <h2>О Миссии</h2>
+        <p>
+            В далеком 2023 году, в зоне конфликта на территории вымышленного государства Альфария, группа из четырех оперативников выполнила задание по уничтожению секретного объекта противника. Несмотря на тяжелые условия и превосходящие силы врага, команда смогла выполнить задачу и вернуться домой.
+        </p>
+    </section>
+
+    <!-- Секция команды -->
+    <section class="team">
+        <h2>Команда</h2>
+        <div class="team-members">
+            <!-- Член команды 1 -->
+            <div class="member">
+                <h3>Денис Дедедеде</h3>
+                <p>Командир группы. Бывший топ-игрок в Dota 2.</p>
+                <p>Денис был одним из лучших игроков в мире Dota 2, но с началом войны он решил использовать свои навыки стратегии и тактики на поле боя. Его способность быстро принимать решения и предугадывать действия противника делает его незаменимым лидером. "Война — это как Dota, только ставки выше", — говорит он.</p>
+            </div>
+            <!-- Член команды 2 -->
+            <div class="member">
+                <h3>Артем Янко</h3>
+                <p>Снайпер. Лучший стрелок в отряде.</p>
+                <p>Артем — мастер точного выстрела. Его умение поражать цели на расстоянии до 2 километров не раз спасало команду. Однако за его холодным взглядом скрывается глубокая рана: когда-то он любил девушку, но из-за долгих командировок и отсутствия она не дождалась его и ушла. Теперь он посвятил себя службе, но иногда в его глазах можно увидеть тень прошлого.</p>
+            </div>
+            <!-- Член команды 3 -->
+            <div class="member">
+                <h3>Артем Калинка</h3>
+                <p>Сапер. Бывший криптоинвестор.</p>
+                <p>Артем до войны был успешным криптоинвестором, но с началом конфликта он решил сменить биржу на минное поле. Его аналитический ум и хладнокровие помогают ему обезвреживать даже самые сложные устройства. "Риск — это моя стихия, будь то криптовалюты или мины", — шутит он.</p>
+            </div>
+            <!-- Член команды 4 -->
+            <div class="member">
+                <h3>Жека Арбуз</h3>
+                <p>Медик. Спас множество жизней в бою.</p>
+                <p>Жека — уникальный медик, который тренировался на свиньях. Его необычный подход к обучению позволил ему набраться опыта в экстремальных условиях. Теперь он спасает жизни своих товарищей с той же уверенностью, с которой когда-то оперировал животных. "Свиньи — лучшие учителя", — говорит он.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Ход операции" -->
+    <section class="operation">
+        <h2>Ход Операции</h2>
+        <div class="operation-steps">
+            <!-- Этап 1 -->
+            <div class="step">
+                <h3>Этап 1: Проникновение</h3>
+                <p>Команда проникла на территорию противника под покровом ночи, избежав обнаружения.</p>
+            </div>
+            <!-- Этап 2 -->
+            <div class="step">
+                <h3>Этап 2: Уничтожение объекта</h3>
+                <p>Секретный объект был уничтожен с помощью взрывчатки, заложенной сапером.</p>
+            </div>
+            <!-- Этап 3 -->
+            <div class="step">
+                <h3>Этап 3: Отступление</h3>
+                <p>Команда успешно отступила, несмотря на преследование врага.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Галерея" -->
+    <section class="gallery">
+        <h2>Галерея</h2>
+        <div class="gallery-images">
+            <img src="https://i.imgur.com/vWQXYzF.jpeg" alt="Фото 1">
+            <img src="https://i.imgur.com/HOBXUvA.jpeg" alt="Фото 2">
+            <img src="https://i.imgur.com/vW2MPXC.jpeg" alt="Фото 3">
+            <img src="https://i.imgur.com/PTVzVmo.jpeg" alt="Фото 4">
+        </div>
+    </section>
+
+    <!-- Секция "Награды" -->
+    <section class="awards">
+        <h2>Награды</h2>
+        <div class="awards-list">
+            <!-- Награда 1 -->
+            <div class="award">
+                <h3>Орден Мужества</h3>
+                <p>За проявленное мужество и отвагу в бою.</p>
+            </div>
+            <!-- Награда 2 -->
+            <div class="award">
+                <h3>Медаль "За боевые заслуги"</h3>
+                <p>За успешное выполнение боевой задачи.</p>
+            </div>
+            <!-- Награда 3 -->
+            <div class="award">
+                <h3>Медаль "За спасение жизни"</h3>
+                <p>За спасение раненых товарищей.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Контакты" -->
+    <section class="contact">
+        <h2>Свяжитесь с нами</h2>
+        <div class="contact-form">
+            <form>
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="email" placeholder="Ваш email" required>
+                <textarea placeholder="Ваше сообщение" rows="5" required></textarea>
+                <button type="submit">Отправить</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Подвал сайта -->
+    <footer>
+        <p>© 2023 Операция "Стальной кулак". Все права защищены.</p>
+    </footer>
+</body>
+</html>
